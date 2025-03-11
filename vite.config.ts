@@ -6,6 +6,7 @@ import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
 const demoConfig = {
+  base: "./",
   root: resolve(dirname(fileURLToPath(import.meta.url)), "./"),
   plugins: [react()],
   build: {
