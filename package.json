@@ -11,6 +11,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "browser": "./dist/index.umd.cjs",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }

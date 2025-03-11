@@ -19,6 +19,7 @@ const libConfig = {
     react(),
     dts({
       insertTypesEntry: true,
+      exclude: ["src/main.tsx", "src/App.tsx"],
     }),
   ],
   build: {
