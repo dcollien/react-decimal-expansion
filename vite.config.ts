@@ -9,7 +9,7 @@ const demoConfig = {
   root: resolve(dirname(fileURLToPath(import.meta.url)), "./"),
   plugins: [react()],
   build: {
-    outDir: resolve(dirname(fileURLToPath(import.meta.url)), "demo"),
+    outDir: resolve(dirname(fileURLToPath(import.meta.url)), "docs"),
     emptyOutDir: true,
   },
 };
