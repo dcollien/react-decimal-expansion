@@ -1,12 +1,20 @@
-import { defineConfig } from "vite";
+import { defineConfig, LibraryFormats } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
-// https://vite.dev/config/
-export default defineConfig({
+const demoConfig = {
+  root: resolve(dirname(fileURLToPath(import.meta.url)), "./"),
+  plugins: [react()],
+  build: {
+    outDir: resolve(dirname(fileURLToPath(import.meta.url)), "demo"),
+    emptyOutDir: true,
+  },
+};
+
+const libConfig = {
   plugins: [
     react(),
     dts({
@@ -19,7 +27,7 @@ export default defineConfig({
         index: resolve(dirname(fileURLToPath(import.meta.url)), "src/index.ts"),
       },
       name: "DecimalExpansion",
-      formats: ["es", "cjs"],
+      formats: ["es", "cjs", "umd"] as LibraryFormats[],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
@@ -31,4 +39,13 @@ export default defineConfig({
       },
     },
   },
+};
+
+// https://vite.dev/config/
+export default defineConfig(({ mode }) => {
+  if (mode === "demo") {
+    return demoConfig;
+  } else {
+    return libConfig;
+  }
 });
