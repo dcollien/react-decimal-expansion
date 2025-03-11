@@ -39,9 +39,18 @@ The `options` prop supports:
 
   // If using the "rounded" format, how to round
   rounding?: {
-    method: "round" | "floor" | "ceil";
-    digits: number;
+    method?: "round" | "floor" | "ceil";
+    digits?: number;
+
+    renderRounded?: React.FC<PropsWithChildren>;
+    renderExact?: React.FC<PropsWithChildren>;
   };
+
+  // Custom renderers for recurring parts
+  renderRecurring?: Record<
+    "vinculum" | "dots" | "parentheses" | "arc" | "ellipsis" | "rounded",
+    React.FC<PropsWithChildren>
+  >;
 }
 ```
 

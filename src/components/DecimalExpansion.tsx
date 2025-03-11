@@ -1,4 +1,4 @@
-import { JSX, useMemo } from "react";
+import React, { JSX, PropsWithChildren, useEffect, useMemo } from "react";
 
 export type DecimalNotationFormat =
   | "vinculum"
@@ -13,15 +13,19 @@ export interface DecimalExpansionOptions {
   format?: DecimalNotationFormat;
   formatOptions?: Intl.NumberFormatOptions;
   rounding?: {
-    method: "round" | "floor" | "ceil";
-    digits: number;
+    method?: "round" | "floor" | "ceil";
+    digits?: number;
+    renderRounded?: React.FC<PropsWithChildren>;
+    renderExact?: React.FC<PropsWithChildren>;
   };
+  renderRecurring?: Record<DecimalNotationFormat, React.FC<PropsWithChildren>>;
 }
 
 export interface DecimalExpansionProps {
   numerator: number;
   denominator: number;
   options?: DecimalExpansionOptions;
+  onFormatChange?: (format: DecimalNotationFormat) => void;
 }
 
 const regionFormats: Record<string, DecimalNotationFormat> = {
@@ -102,11 +106,11 @@ const regionFormats: Record<string, DecimalNotationFormat> = {
   PY: "arc",
 };
 
-function vinculum({ string }: { string: string }) {
-  return <span style={{ textDecoration: "overline" }}>{string}</span>;
+function Vinculum({ children }: PropsWithChildren) {
+  return <span style={{ textDecoration: "overline" }}>{children}</span>;
 }
 
-function Dot({ string }: { string: string }) {
+function Dot({ children }: PropsWithChildren) {
   return (
     <span style={{ whiteSpace: "nowrap" }}>
       <span
@@ -120,14 +124,18 @@ function Dot({ string }: { string: string }) {
         >
           .
         </span>
-        <span style={{ display: "block", lineHeight: "1em" }}>{string}</span>
+        <span style={{ display: "block", lineHeight: "1em" }}>{children}</span>
       </span>
     </span>
   );
 }
 
-function Dots({ string }: { string: string }) {
-  const parts = string.split("");
+function Dots({ children }: PropsWithChildren) {
+  if (typeof children !== "string") {
+    return <></>;
+  }
+
+  const parts = children.split("");
 
   const first = parts[0];
   let middle: string[] | null = parts.slice(1, -1);
@@ -142,18 +150,18 @@ function Dots({ string }: { string: string }) {
 
   return (
     <>
-      <Dot string={first} />
+      <Dot>{first}</Dot>
       {middle ? middle.join("") : null}
-      {last ? <Dot string={last} /> : null}
+      {last ? <Dot>{last}</Dot> : null}
     </>
   );
 }
 
-function Parentheses({ string }: { string: string }) {
-  return <>({string})</>;
+function Parentheses({ children }: PropsWithChildren) {
+  return <>({children})</>;
 }
 
-function Arc({ string }: { string: string }) {
+function Arc({ children }: PropsWithChildren) {
   return (
     <span
       style={{
@@ -165,24 +173,24 @@ function Arc({ string }: { string: string }) {
         borderTopRightRadius: "50% 25%",
       }}
     >
-      {string}
+      {children}
     </span>
   );
 }
 
-function Ellipsis({ string }: { string: string }) {
-  return <> {string}…</>;
+function Ellipsis({ children }: PropsWithChildren) {
+  return <> {children}…</>;
 }
 
-function Identity({ string }: { string: string }) {
-  return <>{string}</>;
+function Identity({ children }: PropsWithChildren) {
+  return <>{children}</>;
 }
 
 const formatComponents: Record<
   DecimalNotationFormat,
-  ({ string }: { string: string }) => JSX.Element
+  ({ children }: PropsWithChildren) => JSX.Element
 > = {
-  vinculum: vinculum,
+  vinculum: Vinculum,
   dots: Dots,
   parentheses: Parentheses,
   arc: Arc,
@@ -233,6 +241,7 @@ export function DecimalExpansion({
   numerator,
   denominator,
   options,
+  onFormatChange,
 }: DecimalExpansionProps) {
   const tag = options?.tag;
 
@@ -249,6 +258,12 @@ export function DecimalExpansion({
   const regionFormat = region ? regionFormats[region] : undefined;
 
   const format = options?.format || regionFormat || "vinculum";
+
+  useEffect(() => {
+    if (onFormatChange) {
+      onFormatChange(format);
+    }
+  }, [format, onFormatChange]);
 
   const expansion = decimalExpansion(numerator, denominator);
 
@@ -273,25 +288,33 @@ export function DecimalExpansion({
     value = method(value * 10 ** digits) / 10 ** digits;
 
     if (value === numerator / denominator) {
-      return <>{parts.map((part) => part.value)}</>;
+      const Exact =
+        options?.rounding?.renderExact || (({ children }) => <>{children}</>);
+      return <Exact>{parts.map((part) => part.value)}</Exact>;
     } else {
       const newParts = numberFormat.formatToParts(value);
-      return <>{newParts.map((part) => part.value)} (rounded)</>;
+      const Rounded =
+        options?.rounding?.renderRounded ||
+        (({ children }) => <>{children} (rounded)</>);
+      return <Rounded>{newParts.map((part) => part.value)}</Rounded>;
     }
   } else {
-    const Component = formatComponents[format];
+    const Recurring =
+      options?.renderRecurring?.[format] || formatComponents[format];
     const fractionPartReplacement = (
       <>
         {nonRecurring ? nonRecurring : null}
-        {recurring ? <Component string={recurring} /> : null}
+        {recurring ? <Recurring>{recurring}</Recurring> : null}
       </>
     );
 
     return (
       <>
-        {parts.map((part) =>
-          part.type === "fraction" ? fractionPartReplacement : part.value
-        )}
+        {parts.map((part) => (
+          <React.Fragment key={`${part.value}(${part.type})`}>
+            {part.type === "fraction" ? fractionPartReplacement : part.value}
+          </React.Fragment>
+        ))}
       </>
     );
   }

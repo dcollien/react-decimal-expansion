@@ -15,6 +15,258 @@ const fractions = [
   [1234, 1235],
 ];
 
+const regions = [
+  ["ps-AF", "Afghanistan"],
+  ["sv-AX", "Åland Islands"],
+  ["sq-AL", "Albania"],
+  ["ar-DZ", "Algeria"],
+  ["en-AS", "American Samoa"],
+  ["ca-AD", "Andorra"],
+  ["pt-AO", "Angola"],
+  ["en-AI", "Anguilla"],
+  ["en-AQ", "Antarctica"],
+  ["en-AG", "Antigua and Barbuda"],
+  ["es-AR", "Argentina"],
+  ["hy-AM", "Armenia"],
+  ["nl-AW", "Aruba"],
+  ["en-AU", "Australia"],
+  ["de-AT", "Austria"],
+  ["az-AZ", "Azerbaijan"],
+  ["en-BS", "Bahamas"],
+  ["ar-BH", "Bahrain"],
+  ["bn-BD", "Bangladesh"],
+  ["en-BB", "Barbados"],
+  ["be-BY", "Belarus"],
+  ["nl-BE", "Belgium"],
+  ["en-BZ", "Belize"],
+  ["fr-BJ", "Benin"],
+  ["en-BM", "Bermuda"],
+  ["dz-BT", "Bhutan"],
+  ["es-BO", "Bolivia"],
+  ["nl-BQ", "Bonaire, Sint Eustatius and Saba"],
+  ["bs-BA", "Bosnia and Herzegovina"],
+  ["en-BW", "Botswana"],
+  ["en-BV", "Bouvet Island"],
+  ["pt-BR", "Brazil"],
+  ["en-IO", "British Indian Ocean Territory"],
+  ["ms-BN", "Brunei Darussalam"],
+  ["bg-BG", "Bulgaria"],
+  ["fr-BF", "Burkina Faso"],
+  ["fr-BI", "Burundi"],
+  ["pt-CV", "Cabo Verde"],
+  ["km-KH", "Cambodia"],
+  ["fr-CM", "Cameroon"],
+  ["en-CA", "Canada"],
+  ["en-KY", "Cayman Islands"],
+  ["fr-CF", "Central African Republic"],
+  ["fr-TD", "Chad"],
+  ["es-CL", "Chile"],
+  ["zh-CN", "China"],
+  ["en-CX", "Christmas Island"],
+  ["en-CC", "Cocos (Keeling) Islands"],
+  ["es-CO", "Colombia"],
+  ["ar-KM", "Comoros"],
+  ["fr-CG", "Congo"],
+  ["fr-CD", "Congo (Democratic Republic)"],
+  ["en-CK", "Cook Islands"],
+  ["es-CR", "Costa Rica"],
+  ["fr-CI", "Côte d'Ivoire"],
+  ["hr-HR", "Croatia"],
+  ["es-CU", "Cuba"],
+  ["nl-CW", "Curaçao"],
+  ["el-CY", "Cyprus"],
+  ["cs-CZ", "Czech Republic"],
+  ["da-DK", "Denmark"],
+  ["ar-DJ", "Djibouti"],
+  ["en-DM", "Dominica"],
+  ["es-DO", "Dominican Republic"],
+  ["es-EC", "Ecuador"],
+  ["ar-EG", "Egypt"],
+  ["es-SV", "El Salvador"],
+  ["es-GQ", "Equatorial Guinea"],
+  ["ti-ER", "Eritrea"],
+  ["et-EE", "Estonia"],
+  ["en-SZ", "Eswatini"],
+  ["am-ET", "Ethiopia"],
+  ["en-FK", "Falkland Islands"],
+  ["fo-FO", "Faroe Islands"],
+  ["en-FJ", "Fiji"],
+  ["fi-FI", "Finland"],
+  ["fr-FR", "France"],
+  ["fr-GF", "French Guiana"],
+  ["fr-PF", "French Polynesia"],
+  ["fr-TF", "French Southern Territories"],
+  ["fr-GA", "Gabon"],
+  ["en-GM", "Gambia"],
+  ["ka-GE", "Georgia"],
+  ["de-DE", "Germany"],
+  ["en-GH", "Ghana"],
+  ["en-GI", "Gibraltar"],
+  ["el-GR", "Greece"],
+  ["kl-GL", "Greenland"],
+  ["en-GD", "Grenada"],
+  ["fr-GP", "Guadeloupe"],
+  ["en-GU", "Guam"],
+  ["es-GT", "Guatemala"],
+  ["en-GG", "Guernsey"],
+  ["fr-GN", "Guinea"],
+  ["pt-GW", "Guinea-Bissau"],
+  ["en-GY", "Guyana"],
+  ["ht-HT", "Haiti"],
+  ["en-HM", "Heard Island and McDonald Islands"],
+  ["la-VA", "Holy See"],
+  ["es-HN", "Honduras"],
+  ["zh-HK", "Hong Kong"],
+  ["hu-HU", "Hungary"],
+  ["is-IS", "Iceland"],
+  ["hi-IN", "India"],
+  ["id-ID", "Indonesia"],
+  ["fa-IR", "Iran"],
+  ["ar-IQ", "Iraq"],
+  ["en-IE", "Ireland"],
+  ["en-IM", "Isle of Man"],
+  ["he-IL", "Israel"],
+  ["it-IT", "Italy"],
+  ["en-JM", "Jamaica"],
+  ["ja-JP", "Japan"],
+  ["en-JE", "Jersey"],
+  ["ar-JO", "Jordan"],
+  ["kk-KZ", "Kazakhstan"],
+  ["en-KE", "Kenya"],
+  ["en-KI", "Kiribati"],
+  ["ko-KP", "Korea (North)"],
+  ["ko-KR", "Korea (South)"],
+  ["ar-KW", "Kuwait"],
+  ["ky-KG", "Kyrgyzstan"],
+  ["lo-LA", "Lao People's Democratic Republic"],
+  ["lv-LV", "Latvia"],
+  ["ar-LB", "Lebanon"],
+  ["en-LS", "Lesotho"],
+  ["en-LR", "Liberia"],
+  ["ar-LY", "Libya"],
+  ["de-LI", "Liechtenstein"],
+  ["lt-LT", "Lithuania"],
+  ["fr-LU", "Luxembourg"],
+  ["zh-MO", "Macao"],
+  ["mg-MG", "Madagascar"],
+  ["en-MW", "Malawi"],
+  ["ms-MY", "Malaysia"],
+  ["dv-MV", "Maldives"],
+  ["fr-ML", "Mali"],
+  ["mt-MT", "Malta"],
+  ["en-MH", "Marshall Islands"],
+  ["fr-MQ", "Martinique"],
+  ["ar-MR", "Mauritania"],
+  ["en-MU", "Mauritius"],
+  ["fr-YT", "Mayotte"],
+  ["es-MX", "Mexico"],
+  ["en-FM", "Micronesia"],
+  ["ro-MD", "Moldova"],
+  ["fr-MC", "Monaco"],
+  ["mn-MN", "Mongolia"],
+  ["sr-ME", "Montenegro"],
+  ["en-MS", "Montserrat"],
+  ["ar-MA", "Morocco"],
+  ["pt-MZ", "Mozambique"],
+  ["my-MM", "Myanmar"],
+  ["en-NA", "Namibia"],
+  ["en-NR", "Nauru"],
+  ["ne-NP", "Nepal"],
+  ["nl-NL", "Netherlands"],
+  ["fr-NC", "New Caledonia"],
+  ["en-NZ", "New Zealand"],
+  ["es-NI", "Nicaragua"],
+  ["fr-NE", "Niger"],
+  ["en-NG", "Nigeria"],
+  ["en-NU", "Niue"],
+  ["en-NF", "Norfolk Island"],
+  ["mk-MK", "North Macedonia"],
+  ["en-MP", "Northern Mariana Islands"],
+  ["no-NO", "Norway"],
+  ["ar-OM", "Oman"],
+  ["ur-PK", "Pakistan"],
+  ["en-PW", "Palau"],
+  ["ar-PS", "Palestine, State of"],
+  ["es-PA", "Panama"],
+  ["en-PG", "Papua New Guinea"],
+  ["es-PY", "Paraguay"],
+  ["es-PE", "Peru"],
+  ["en-PH", "Philippines"],
+  ["en-PN", "Pitcairn"],
+  ["pl-PL", "Poland"],
+  ["pt-PT", "Portugal"],
+  ["es-PR", "Puerto Rico"],
+  ["ar-QA", "Qatar"],
+  ["fr-RE", "Réunion"],
+  ["ro-RO", "Romania"],
+  ["ru-RU", "Russian Federation"],
+  ["rw-RW", "Rwanda"],
+  ["fr-BL", "Saint Barthélemy"],
+  ["en-SH", "Saint Helena"],
+  ["en-KN", "Saint Kitts and Nevis"],
+  ["en-LC", "Saint Lucia"],
+  ["fr-MF", "Saint Martin (French part)"],
+  ["fr-PM", "Saint Pierre and Miquelon"],
+  ["en-VC", "Saint Vincent and the Grenadines"],
+  ["sm-WS", "Samoa"],
+  ["it-SM", "San Marino"],
+  ["pt-ST", "Sao Tome and Principe"],
+  ["ar-SA", "Saudi Arabia"],
+  ["fr-SN", "Senegal"],
+  ["sr-RS", "Serbia"],
+  ["en-SC", "Seychelles"],
+  ["en-SL", "Sierra Leone"],
+  ["en-SG", "Singapore"],
+  ["nl-SX", "Sint Maarten (Dutch part)"],
+  ["sk-SK", "Slovakia"],
+  ["sl-SI", "Slovenia"],
+  ["en-SB", "Solomon Islands"],
+  ["so-SO", "Somalia"],
+  ["en-ZA", "South Africa"],
+  ["en-GS", "South Georgia and the South Sandwich Islands"],
+  ["en-SS", "South Sudan"],
+  ["es-ES", "Spain"],
+  ["si-LK", "Sri Lanka"],
+  ["ar-SD", "Sudan"],
+  ["nl-SR", "Suriname"],
+  ["no-SJ", "Svalbard and Jan Mayen"],
+  ["sv-SE", "Sweden"],
+  ["de-CH", "Switzerland"],
+  ["ar-SY", "Syrian Arab Republic"],
+  ["zh-TW", "Taiwan"],
+  ["tg-TJ", "Tajikistan"],
+  ["sw-TZ", "Tanzania"],
+  ["th-TH", "Thailand"],
+  ["pt-TL", "Timor-Leste"],
+  ["fr-TG", "Togo"],
+  ["en-TK", "Tokelau"],
+  ["to-TO", "Tonga"],
+  ["en-TT", "Trinidad and Tobago"],
+  ["ar-TN", "Tunisia"],
+  ["tr-TR", "Turkey"],
+  ["tk-TM", "Turkmenistan"],
+  ["en-TC", "Turks and Caicos Islands"],
+  ["en-TV", "Tuvalu"],
+  ["en-UG", "Uganda"],
+  ["uk-UA", "Ukraine"],
+  ["ar-AE", "United Arab Emirates"],
+  ["en-GB", "United Kingdom"],
+  ["en-US", "United States"],
+  ["en-UM", "United States Minor Outlying Islands"],
+  ["es-UY", "Uruguay"],
+  ["uz-UZ", "Uzbekistan"],
+  ["en-VU", "Vanuatu"],
+  ["es-VE", "Venezuela"],
+  ["vi-VN", "Viet Nam"],
+  ["en-VG", "Virgin Islands (British)"],
+  ["en-VI", "Virgin Islands (U.S.)"],
+  ["fr-WF", "Wallis and Futuna"],
+  ["ar-EH", "Western Sahara"],
+  ["ar-YE", "Yemen"],
+  ["en-ZM", "Zambia"],
+  ["en-ZW", "Zimbabwe"],
+];
+
 // all from 1/2 to 1/60
 const moreFractions = (() => {
   const fractions: [number, number][] = [];
@@ -29,6 +281,7 @@ function App() {
   const [denominator, setDenominator] = useState("1235");
   const [tag, setTag] = useState("");
   const [format, setFormat] = useState("");
+  const [defaultFormat, setDefaultFormat] = useState(format);
 
   const defaultRegion = useMemo(() => {
     return new Intl.Locale(navigator.language).region;
@@ -53,258 +306,14 @@ function App() {
       <br />
       <select value={tag} onChange={(e) => setTag(e.target.value)}>
         <option value="">Default ({defaultRegion})</option>
-        <option value="AF">Afghanistan</option>
-        <option value="AX">Åland Islands</option>
-        <option value="AL">Albania</option>
-        <option value="DZ">Algeria</option>
-        <option value="AS">American Samoa</option>
-        <option value="AD">Andorra</option>
-        <option value="AO">Angola</option>
-        <option value="AI">Anguilla</option>
-        <option value="AQ">Antarctica</option>
-        <option value="AG">Antigua and Barbuda</option>
-        <option value="AR">Argentina</option>
-        <option value="AM">Armenia</option>
-        <option value="AW">Aruba</option>
-        <option value="AU">Australia</option>
-        <option value="AT">Austria</option>
-        <option value="AZ">Azerbaijan</option>
-        <option value="BS">Bahamas</option>
-        <option value="BH">Bahrain</option>
-        <option value="BD">Bangladesh</option>
-        <option value="BB">Barbados</option>
-        <option value="BY">Belarus</option>
-        <option value="BE">Belgium</option>
-        <option value="BZ">Belize</option>
-        <option value="BJ">Benin</option>
-        <option value="BM">Bermuda</option>
-        <option value="BT">Bhutan</option>
-        <option value="BO">Bolivia</option>
-        <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-        <option value="BA">Bosnia and Herzegovina</option>
-        <option value="BW">Botswana</option>
-        <option value="BV">Bouvet Island</option>
-        <option value="BR">Brazil</option>
-        <option value="IO">British Indian Ocean Territory</option>
-        <option value="BN">Brunei Darussalam</option>
-        <option value="BG">Bulgaria</option>
-        <option value="BF">Burkina Faso</option>
-        <option value="BI">Burundi</option>
-        <option value="CV">Cabo Verde</option>
-        <option value="KH">Cambodia</option>
-        <option value="CM">Cameroon</option>
-        <option value="CA">Canada</option>
-        <option value="KY">Cayman Islands</option>
-        <option value="CF">Central African Republic</option>
-        <option value="TD">Chad</option>
-        <option value="CL">Chile</option>
-        <option value="CN">China</option>
-        <option value="CX">Christmas Island</option>
-        <option value="CC">Cocos (Keeling) Islands</option>
-        <option value="CO">Colombia</option>
-        <option value="KM">Comoros</option>
-        <option value="CG">Congo</option>
-        <option value="CD">Congo (Democratic Republic)</option>
-        <option value="CK">Cook Islands</option>
-        <option value="CR">Costa Rica</option>
-        <option value="CI">Côte d'Ivoire</option>
-        <option value="HR">Croatia</option>
-        <option value="CU">Cuba</option>
-        <option value="CW">Curaçao</option>
-        <option value="CY">Cyprus</option>
-        <option value="CZ">Czech Republic</option>
-        <option value="DK">Denmark</option>
-        <option value="DJ">Djibouti</option>
-        <option value="DM">Dominica</option>
-        <option value="DO">Dominican Republic</option>
-        <option value="EC">Ecuador</option>
-        <option value="EG">Egypt</option>
-        <option value="SV">El Salvador</option>
-        <option value="GQ">Equatorial Guinea</option>
-        <option value="ER">Eritrea</option>
-        <option value="EE">Estonia</option>
-        <option value="SZ">Eswatini</option>
-        <option value="ET">Ethiopia</option>
-        <option value="FK">Falkland Islands</option>
-        <option value="FO">Faroe Islands</option>
-        <option value="FJ">Fiji</option>
-        <option value="FI">Finland</option>
-        <option value="FR">France</option>
-        <option value="GF">French Guiana</option>
-        <option value="PF">French Polynesia</option>
-        <option value="TF">French Southern Territories</option>
-        <option value="GA">Gabon</option>
-        <option value="GM">Gambia</option>
-        <option value="GE">Georgia</option>
-        <option value="DE">Germany</option>
-        <option value="GH">Ghana</option>
-        <option value="GI">Gibraltar</option>
-        <option value="GR">Greece</option>
-        <option value="GL">Greenland</option>
-        <option value="GD">Grenada</option>
-        <option value="GP">Guadeloupe</option>
-        <option value="GU">Guam</option>
-        <option value="GT">Guatemala</option>
-        <option value="GG">Guernsey</option>
-        <option value="GN">Guinea</option>
-        <option value="GW">Guinea-Bissau</option>
-        <option value="GY">Guyana</option>
-        <option value="HT">Haiti</option>
-        <option value="HM">Heard Island and McDonald Islands</option>
-        <option value="VA">Holy See</option>
-        <option value="HN">Honduras</option>
-        <option value="HK">Hong Kong</option>
-        <option value="HU">Hungary</option>
-        <option value="IS">Iceland</option>
-        <option value="IN">India</option>
-        <option value="ID">Indonesia</option>
-        <option value="IR">Iran</option>
-        <option value="IQ">Iraq</option>
-        <option value="IE">Ireland</option>
-        <option value="IM">Isle of Man</option>
-        <option value="IL">Israel</option>
-        <option value="IT">Italy</option>
-        <option value="JM">Jamaica</option>
-        <option value="JP">Japan</option>
-        <option value="JE">Jersey</option>
-        <option value="JO">Jordan</option>
-        <option value="KZ">Kazakhstan</option>
-        <option value="KE">Kenya</option>
-        <option value="KI">Kiribati</option>
-        <option value="KP">Korea (North)</option>
-        <option value="KR">Korea (South)</option>
-        <option value="KW">Kuwait</option>
-        <option value="KG">Kyrgyzstan</option>
-        <option value="LA">Lao People's Democratic Republic</option>
-        <option value="LV">Latvia</option>
-        <option value="LB">Lebanon</option>
-        <option value="LS">Lesotho</option>
-        <option value="LR">Liberia</option>
-        <option value="LY">Libya</option>
-        <option value="LI">Liechtenstein</option>
-        <option value="LT">Lithuania</option>
-        <option value="LU">Luxembourg</option>
-        <option value="MO">Macao</option>
-        <option value="MG">Madagascar</option>
-        <option value="MW">Malawi</option>
-        <option value="MY">Malaysia</option>
-        <option value="MV">Maldives</option>
-        <option value="ML">Mali</option>
-        <option value="MT">Malta</option>
-        <option value="MH">Marshall Islands</option>
-        <option value="MQ">Martinique</option>
-        <option value="MR">Mauritania</option>
-        <option value="MU">Mauritius</option>
-        <option value="YT">Mayotte</option>
-        <option value="MX">Mexico</option>
-        <option value="FM">Micronesia</option>
-        <option value="MD">Moldova</option>
-        <option value="MC">Monaco</option>
-        <option value="MN">Mongolia</option>
-        <option value="ME">Montenegro</option>
-        <option value="MS">Montserrat</option>
-        <option value="MA">Morocco</option>
-        <option value="MZ">Mozambique</option>
-        <option value="MM">Myanmar</option>
-        <option value="NA">Namibia</option>
-        <option value="NR">Nauru</option>
-        <option value="NP">Nepal</option>
-        <option value="NL">Netherlands</option>
-        <option value="NC">New Caledonia</option>
-        <option value="NZ">New Zealand</option>
-        <option value="NI">Nicaragua</option>
-        <option value="NE">Niger</option>
-        <option value="NG">Nigeria</option>
-        <option value="NU">Niue</option>
-        <option value="NF">Norfolk Island</option>
-        <option value="MK">North Macedonia</option>
-        <option value="MP">Northern Mariana Islands</option>
-        <option value="NO">Norway</option>
-        <option value="OM">Oman</option>
-        <option value="PK">Pakistan</option>
-        <option value="PW">Palau</option>
-        <option value="PS">Palestine, State of</option>
-        <option value="PA">Panama</option>
-        <option value="PG">Papua New Guinea</option>
-        <option value="PY">Paraguay</option>
-        <option value="PE">Peru</option>
-        <option value="PH">Philippines</option>
-        <option value="PN">Pitcairn</option>
-        <option value="PL">Poland</option>
-        <option value="PT">Portugal</option>
-        <option value="PR">Puerto Rico</option>
-        <option value="QA">Qatar</option>
-        <option value="RE">Réunion</option>
-        <option value="RO">Romania</option>
-        <option value="RU">Russian Federation</option>
-        <option value="RW">Rwanda</option>
-        <option value="BL">Saint Barthélemy</option>
-        <option value="SH">Saint Helena</option>
-        <option value="KN">Saint Kitts and Nevis</option>
-        <option value="LC">Saint Lucia</option>
-        <option value="MF">Saint Martin (French part)</option>
-        <option value="PM">Saint Pierre and Miquelon</option>
-        <option value="VC">Saint Vincent and the Grenadines</option>
-        <option value="WS">Samoa</option>
-        <option value="SM">San Marino</option>
-        <option value="ST">Sao Tome and Principe</option>
-        <option value="SA">Saudi Arabia</option>
-        <option value="SN">Senegal</option>
-        <option value="RS">Serbia</option>
-        <option value="SC">Seychelles</option>
-        <option value="SL">Sierra Leone</option>
-        <option value="SG">Singapore</option>
-        <option value="SX">Sint Maarten (Dutch part)</option>
-        <option value="SK">Slovakia</option>
-        <option value="SI">Slovenia</option>
-        <option value="SB">Solomon Islands</option>
-        <option value="SO">Somalia</option>
-        <option value="ZA">South Africa</option>
-        <option value="GS">South Georgia and the South Sandwich Islands</option>
-        <option value="SS">South Sudan</option>
-        <option value="ES">Spain</option>
-        <option value="LK">Sri Lanka</option>
-        <option value="SD">Sudan</option>
-        <option value="SR">Suriname</option>
-        <option value="SJ">Svalbard and Jan Mayen</option>
-        <option value="SE">Sweden</option>
-        <option value="CH">Switzerland</option>
-        <option value="SY">Syrian Arab Republic</option>
-        <option value="TW">Taiwan</option>
-        <option value="TJ">Tajikistan</option>
-        <option value="TZ">Tanzania</option>
-        <option value="TH">Thailand</option>
-        <option value="TL">Timor-Leste</option>
-        <option value="TG">Togo</option>
-        <option value="TK">Tokelau</option>
-        <option value="TO">Tonga</option>
-        <option value="TT">Trinidad and Tobago</option>
-        <option value="TN">Tunisia</option>
-        <option value="TR">Turkey</option>
-        <option value="TM">Turkmenistan</option>
-        <option value="TC">Turks and Caicos Islands</option>
-        <option value="TV">Tuvalu</option>
-        <option value="UG">Uganda</option>
-        <option value="UA">Ukraine</option>
-        <option value="AE">United Arab Emirates</option>
-        <option value="GB">United Kingdom</option>
-        <option value="US">United States</option>
-        <option value="UM">United States Minor Outlying Islands</option>
-        <option value="UY">Uruguay</option>
-        <option value="UZ">Uzbekistan</option>
-        <option value="VU">Vanuatu</option>
-        <option value="VE">Venezuela</option>
-        <option value="VN">Viet Nam</option>
-        <option value="VG">Virgin Islands (British)</option>
-        <option value="VI">Virgin Islands (U.S.)</option>
-        <option value="WF">Wallis and Futuna</option>
-        <option value="EH">Western Sahara</option>
-        <option value="YE">Yemen</option>
-        <option value="ZM">Zambia</option>
-        <option value="ZW">Zimbabwe</option>
+        {regions.map(([tag, label]) => (
+          <option key={tag} value={tag}>
+            {label}
+          </option>
+        ))}
       </select>
       <select value={format} onChange={(e) => setFormat(e.target.value)}>
-        <option value="">Default</option>
+        <option value="">Default ({defaultFormat})</option>
         <option value="vinculum">Vinculum</option>
         <option value="dots">Dots</option>
         <option value="parentheses">Parentheses</option>
@@ -317,7 +326,7 @@ function App() {
         {Number(numerator) / Number(denominator)}
       </p>
       <p>
-        <strong>Decimal Expansion</strong>:{" "}
+        <strong>Decimal Expansion</strong>:
         <DecimalExpansion
           numerator={Number(numerator)}
           denominator={Number(denominator)}
@@ -325,6 +334,7 @@ function App() {
             tag: tag || undefined,
             format: (format as DecimalNotationFormat) || undefined,
           }}
+          onFormatChange={(newFormat) => setDefaultFormat(newFormat)}
         />
       </p>
       <hr />

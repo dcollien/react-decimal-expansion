@@ -1,7 +1,7 @@
 {
   "name": "react-decimal-expansion",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A repeating/recurring decimal component for React",
   "type": "module",
   "license": "MIT",
