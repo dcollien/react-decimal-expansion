@@ -326,7 +326,7 @@ function App() {
         {Number(numerator) / Number(denominator)}
       </p>
       <p>
-        <strong>Decimal Expansion</strong>:
+        <strong>Decimal Expansion</strong>:{" "}
         <DecimalExpansion
           numerator={Number(numerator)}
           denominator={Number(denominator)}
