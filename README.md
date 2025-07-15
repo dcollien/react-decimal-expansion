@@ -15,7 +15,7 @@ import { DecimalExpansion } from "react-decimal-expansion";
 
 <DecimalExpansion numerator={1234} denominator={1235} />
 ```
-[Demo: Try it out with different fractions]([https://en.wikipedia.org/wiki/Repeating_decimal](https://dcollien.github.io/react-decimal-expansion/))
+[Demo: Try it out with different fractions](https://en.wikipedia.org/wiki/Repeating_decimal](https://dcollien.github.io/react-decimal-expansion/)
 
 Supported notation:
 - Vinculum for US/Canada, India and select European countries
