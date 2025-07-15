@@ -1,8 +1,12 @@
-# Decimal Expansion with Recurring Decimals
+# Locale-aware repeating decimals for React.
 
 `npm install react-decimal-expansion`
 `pnpm add react-decimal-expansion`
 `yarn add react-decimal-expansion`
+
+[Repeating (recurring) decimals](https://en.wikipedia.org/wiki/Repeating_decimal) are numbers whose fractional part repeats infinitely, for example: 1/3 = 0.333… or 1/7 = 0.142857142857…. Different regions use various notations to indicate repeating digits, including vinculum bars, dots, parentheses, arcs, or ellipsis.
+
+This React component renders repeating decimals using notation appropriate to different locales or custom preferences. It supports integration with `Intl.NumberFormat` for localized number formatting and offers flexible customization options for notation style, rounding, and rendering. It is designed for scientific and educational software, multilingual applications, academic publishing, and any context requiring precise and culturally appropriate numeric display.
 
 ```tsx
 import { DecimalExpansion } from "react-decimal-expansion";
@@ -12,16 +16,15 @@ import { DecimalExpansion } from "react-decimal-expansion";
 <DecimalExpansion numerator={1234} denominator={1235} />
 ```
 
-Renders an internationalized locale-formatted [recurring/repeating decimal](https://en.wikipedia.org/wiki/Repeating_decimal) of the given rational.
-
-Supporting:
-
+Supported notation:
 - Vinculum for US/Canada, India and select European countries
 - Dots for UK, Australia, New Zealand, People's Republic of China, and select Middle Eastern and South-east Asian countries
 - Parentheses for other parts of Europe / Scandinavian countries, Vietnam and Israel
 - Arc for Spain and Latin America
 - Ellipsis as another option
 - Rounded as yet another display option
+
+(If you notice your region has a different convention to what is chosen as default for that region, please raise an issue)
 
 The `options` prop supports:
 
