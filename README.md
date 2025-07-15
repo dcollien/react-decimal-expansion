@@ -4,7 +4,7 @@
 `pnpm add react-decimal-expansion`
 `yarn add react-decimal-expansion`
 
-[Repeating (recurring) decimals](https://en.wikipedia.org/wiki/Repeating_decimal) are numbers whose fractional part repeats infinitely, for example: 1/3 = 0.333… or 1/7 = 0.142857142857…. Different regions use various notations to indicate repeating digits, including vinculum bars, dots, parentheses, arcs, or ellipsis.
+[Repeating (recurring) decimals](https://en.wikipedia.org/wiki/Repeating_decimal) are numbers whose decimal expansions include a repeating sequence, for example: 1/3 = 0.333… or 1/7 = 0.142857142857…. Different regions use various notations to indicate repeating digits, including vinculum bars, dots, parentheses, arcs, or ellipsis.
 
 This React component renders repeating decimals using notation appropriate to different locales or custom preferences. It supports integration with `Intl.NumberFormat` for localized number formatting and offers flexible customization options for notation style, rounding, and rendering. It is designed for scientific and educational software, multilingual applications, academic publishing, and any context requiring precise and culturally appropriate numeric display.
 
